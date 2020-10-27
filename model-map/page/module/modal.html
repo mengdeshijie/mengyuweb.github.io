@@ -1,0 +1,342 @@
+<style>
+    #modal-container {
+        width: 400px;
+	    height: calc(100vh);
+        position: absolute;
+        right: 1340px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        color: #fff;
+        font-size: 16px;
+        transform: translate(800px, 0px);
+        opacity: 1;
+    }
+
+    /* #modal-container .modal-background {
+        display: table-cell;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        vertical-align: middle;
+    } */
+
+    #modal-container .modal-background .modal-center {
+        /* background: linear-gradient(to right, var(--zs), var(--ns)); */
+        display: inline-block;
+        border-radius: 3px;
+        font-weight: 300;
+        position: relative;
+    }
+
+    #modal-container .modal-background .modal-center h2 {
+        font-size: 25px;
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+
+    #modal-container .modal-background .modal-center p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    #modal-container.one {
+        animation: unfoldIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+/* 
+    #modal-container.one .modal-background .modal-center {
+        transform: scale(0);
+        animation: zoomIn 0.5s 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    } */
+
+    #modal-container.one.out {
+        animation: unfoldOut 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    /* #modal-container.one.out .modal-background .modal-center {
+        animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    } */
+
+    @keyframes unfoldIn {
+        0% {
+            
+            transform: translate(400px, 0px);
+            opacity: 0;
+        }
+
+        /* 50% {
+            transform: scaleY(0) scaleX(1);
+        } */
+
+        100% {
+            transform: translate(0, 0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes unfoldOut {
+        0% {
+            transform: translate(0, 0px);
+            opacity: 1;
+        }
+
+      
+
+        100% {
+            transform: translate(400px, 0px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoomOut {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    .modal-center {
+        background: linear-gradient(to right, var(--zs), var(--ns));
+    }
+
+    .modal-center .box_top {
+        height: 200px;
+        width: 100%;
+        padding: 45px 68px;
+    }
+
+    .modal-center .box_top .box_top_img {
+        width: 160px;
+        height: 160px;
+        background-color: #fff;
+    }
+
+    .modal-center .box_top .box_top_content {
+        color: #000;
+        width: 1170px;
+        text-align: start;
+    }
+
+    .box_top_content .name_cn {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .box_top_content .name_en {
+        font-size: 20px;
+    }
+
+    .box_top_content .name_info {
+        font-size: 16px;
+        text-indent: 2em;
+    }
+
+    .box_top .modal_delete {
+        width: 39px;
+        height: 39px;
+        cursor: pointer;
+    }
+
+    .modal-center .box_left {
+        max-height: 600px;
+        overflow-y: scroll;
+        width: 190px;
+        float: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .modal-center .box_left::-webkit-scrollbar {
+    display: none;
+}
+
+    .modal-center .box_left div {
+        height: 58px;
+        line-height: 58px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        text-align: start;
+        padding-left: 53px;
+        cursor: pointer;
+    }
+
+    .modal-center .box_left .active {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .modal-center .box_right {
+        height: 600px;
+        width: 1155px;
+        padding: 40px 25px 25px;
+        float: left;
+        overflow: auto;
+        background-color: #fff;
+    }
+
+    .modal-center .box_right table {
+        color: #000;
+    }
+
+    .modal-center .box_right table thead {
+        color: #000;
+        background-color: #adadad;
+        border: none;
+    }
+
+    .modal-center .box_right table thead th {
+        font-size: 18px;
+        height: 42px;
+        line-height: 42px;
+    }
+
+    .modal-center .box_right .table-striped>tbody>tr:nth-of-type(odd) {
+        background-color: #ffffff;
+        border: 1px #ccc dashed;
+        font-size: 14px;
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .modal-center .box_right .table-striped>tbody>tr:nth-of-type(even) {
+        background-color: #e5e5e5;
+        border-left: 1px #ccc dashed;
+        border-right: 1px #ccc dashed;
+        font-size: 14px;
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .table>tbody>tr>td,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>td,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>thead>tr>th {
+        border-top: none;
+        text-align: center;
+    }
+    
+    .table>tbody>tr>td,
+    .table>tbody>tr>th {
+        padding: 7px;
+    }
+
+    .modal-center .box_right .text_box {
+        height: 40px;
+        line-height: 30px;
+        font-size: 18px;
+        color: #000;
+        text-align: left;
+    }
+
+    .box_right .text_box .name {
+        font-weight: 500;
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+    }
+
+    .box_right .text_box .content {
+        padding-left: 5px;
+        display: inline-block;
+        width: 800px;
+        border-bottom: 1px dashed #767676;
+    }
+
+    .box_right>div {
+        display: none;
+    }
+
+    .box_right>div:first-of-type {
+        display: block;
+    }
+
+    /* 表格样式
+  .modal-center .box_right .table>thead {
+	display:table;
+	width: 100%;
+
+  }
+  .modal-center .box_right .table>tbody {
+	  max-height: 440px;
+	  display: block;
+	  overflow: scroll;
+	  width: 1104px;
+  }
+  .modal-center .box_right .table>tbody>tr {
+	width: 100%;
+	display: table;
+  }
+  table tbody::-webkit-scrollbar {
+    display: none;
+} */
+    .noSpan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #767676;
+        height: 200px;
+    }
+</style>
+<div id="modal-container" class="one">
+    <div class="modal-background">
+        <div class="modal-center">
+            <div class="box_top flex">
+                <!-- <div class="box_top_img flex justifyCenter alignCenter">
+                    <img src="../img/index_frame.png" alt="">
+                </div> -->
+                <div class="box_top_content">
+                    <div id="compName" class="name_cn"></div>
+                    <!-- <div id="englishNames" class="name_en">Xingin Information Technology(Shanghai)Co.,Ltd.</div> -->
+                    <!-- <div id="businessScope" class="name_info"></div> -->
+                </div>
+                <img src="../img/modal_delete.png" alt="" class="modal_delete">
+            </div>
+            <div class="box_left flex column clearfix">
+                <div class="active">工商信息</div>
+                <div>企业架构图</div>
+                <div>股权穿透图</div>
+                <div data-otype="n">行政许可<span class="total xzxknum">(0)</span></div>
+                <div data-otype="tax">税务评级<span class="total supjnum">(0)</span></div>
+                <div data-otype="qualification">资质证书<span class="total zjzsnum">(0)</span></div>
+                <div data-otype="n">知识产权<span class="total zscqnum">(0)</span></div>
+                <div data-otype="report">企业年报<span class="total qynbnum">(0)</span></div>
+                <div data-otype="lawsuit">法律诉讼<span class="total flssnum">(0)</span></div>
+                <div data-otype="n">经营异常<span class="total jyysnum">(0)</span></div>
+                <div data-otype="punishment/gsj">行政处罚<span class="total xzcfnum">(0)</span></div>
+                <div data-otype="0">投诉举报<span class="total tsjbnnum">(0)</span></div>
+                <div data-otype="0">荣誉信息<span class="total ryxxnum">(0)</span></div>
+            </div>
+            <div class="box_right">
+                <div id="writing" style="text-align: center"></div>
+                <div class="flex justifyCenter alignCenter " style="text-align: center"></div>
+                <div class="flex justifyCenter alignCenter" style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+                <div style="text-align: center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/module/modal.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>静安区市北高新智能监管平台</title>
+    <style>
+        body,
+        html,
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            background: url(./img/bg.jpg)no-repeat;
+            background-size: 100% auto;
+            background-position: bottom center;
+            background-color: #000;
+            z-index: -999;
+        }
+
+        .di {
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1000;
+            position: absolute;
+        }
+
+        .video {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .logo,
+        .box_login {
+            width: 623px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* width: 50%;
+			height: auto; */
+            z-index: 10000;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box_input {
+            color: black;
+        }
+
+        .box_login {
+            color: #fff;
+        }
+
+        .box_login .login_title {
+            font-size: 47px;
+        }
+
+        .box_login .login_title_en {
+            font-size: 26px;
+            color: #6045d5;
+            background-image: -webkit-linear-gradient(-180deg, #87eaff 20%, #6045d5 100%);
+            background-image: linear-gradient(-180deg, #87eaff 20%, #6045d5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .box_login .box_input {
+            width: 346px;
+            -webkit-appearance: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-image: none;
+            border-radius: 4px;
+            border: 1px solid #dcdfe6;
+            box-sizing: border-box;
+            color: #fff;
+            display: inline-block;
+            font-size: inherit;
+            height: 44px;
+            line-height: 44px;
+            outline: none;
+            padding: 0 15px;
+            transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+            border-radius: 8px;
+        }
+
+        .box_login .box_checkbox {
+            margin-right: auto;
+            flex: 1;
+        }
+
+        .box_login form {
+            width: 400px;
+            margin-top: 23px;
+            margin-left: 54px;
+        }
+
+        .box_login form div {
+            margin-top: 10px;
+        }
+
+        .box_login form .checkbox {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .box_login form .checkbox span {
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        .box_login input[type=checkbox] {
+            cursor: pointer;
+            position: relative;
+            width: 15px;
+            height: 15px;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 5);
+            vertical-align: middle;
+        }
+
+        /* .box_login input[type=checkbox]::after{
+			position: absolute;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			width: 15px;
+			height: 15px;
+			display: inline-block;
+			visibility: visible;
+			padding-left: 0px;
+			text-align: center;
+			content: ' ';
+			border-radius: 3px;
+			border: 1px solid rgba(0, 0, 0, 5);
+		}
+				
+		.box_login input[type=checkbox]:checked::after{
+			content: "✓";
+			font-size: 12px;
+			font-weight: bold;
+		} */
+
+        .box_login .login_btn {
+            cursor: pointer;
+            color: #fff;
+            width: 346px;
+            height: 46px;
+            line-height: 46px;
+            border-radius: 10px;
+            text-align: center;
+            background: linear-gradient(#87eaff, #6045d5);
+        }
+
+        .box_login .login_btn a {
+            display: block;
+            color: #fff;
+        }
+
+        .box_login .box_auxiliary {
+            font-size: 14px;
+            color: #fff;
+            width: 346px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img class="logo" src="./img/logo.png"> -->
+    <img class="di" src="./img/di.png">
+    <video id="video" class="video" loop muted autoplay>
+        <source src="./video/bg.mp4" type="video/mp4">抱歉，您的浏览器不支持内嵌视频</video>
+    <div class="box_login">
+        <h2 class="login_title">静安区市北高新智能监管平台</h2>
+        <div class="login_title_en">Data Visualization Platform</div>
+
+        <form role="form">
+            <div class="form-group">
+                <!-- <label for="name">名称</label> -->
+                <input type="text" class="box_input" id="name" placeholder="用户名">
+            </div>
+            <div class="form-group">
+                <!-- <label for="name">密码</label> -->
+                <input type="password" class="box_input" id="password" placeholder="密码">
+            </div>
+            <div class="checkbox">
+                <input type="checkbox"><span>记住密码</span>
+            </div>
+            <div class="login_btn"><a href="page/index.html">登录</a></div>
+            <div class="box_auxiliary">
+                <span>注册</span>
+                <span>忘记密码</span>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

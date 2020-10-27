@@ -1,0 +1,210 @@
+<style type="text/css">
+    .party_box {
+        display: flex;
+        align-items: stretch;
+        position: absolute;
+        top: 205px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 205px);
+        padding: 0px 10px 0 58px;
+        background-color: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .party_box_left,.party_box_right {
+        flex: 0 0 26em;
+        padding: 10px;
+    }
+
+    .party_box_center {
+        flex: 1;
+        padding: 10px;
+        border-right: 1px solid #3c4381;
+        border-left: 1px solid #3c4381;
+    }
+
+    .mb {
+        margin-bottom: 20px;
+    }
+
+    .party_title {
+        font-size: 20px;
+        color: var(--tco);
+    }
+
+    .party_box_left .party_left_btn div {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: linear-gradient(var(--ns), var(--zs));
+        color: #fff;
+        border-radius: 3px;
+        padding: 0 20px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    .party_box_left .party_left_btn div span {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .party_box_left .party_left_img, .party_center_img {
+        width: 100%;
+    }
+
+    .party_box_left .party_title_num {
+        border-bottom: 1px solid #aaa;
+        
+    }
+
+    .party_box_left .party_title_num span {
+        font-size: 60px;
+        color: var(--ns);
+        background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(var(--ns)), to(var(--zs)));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+        font-family: bold;
+        height: 30px;
+    }
+
+    .party_box_left .party_title_num span:last-of-type {
+        font-size: 40px;
+        text-align: right;
+        margin-left: 10px;
+    }
+
+    .party_charbox {
+        width: 100%;
+        height: 240px;
+    }
+    .party_charbox>div {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .party_center_img {
+        height: 420px;
+    }
+
+    .party_center_img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .party_right_top span{
+        color: var(--ns);
+        background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(var(--ns)), to(var(--zs)));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+    }
+
+    .party_right_top .proportion {
+        width: 400px;
+        height: 100px;
+    }
+    
+    .proportion .proportion_box {
+        border-right: 1px solid #3c4381;
+    }
+
+    .proportion div {
+        flex: 1;
+        text-align: center;
+        
+    }
+
+    .proportion>div:last-child {
+        height: 80px;
+        line-height: 80px;
+        margin-left: 32px;
+        background: linear-gradient(var(--ns), var(--zs));
+    }
+
+    .party_right_top {
+        width: 100%;
+    }
+    .party_right_top .peopre_num {
+        width: 100%;
+    }
+    .party_right_top .peopre_num span{
+        font-size: 30px;
+    }
+
+    .peopre_num_div {
+        width: 49%;
+    }
+
+</style>
+
+<!-- 总览左 -->
+<div class="party_box">
+    <div class="party_box_left">
+        <div class="party_title mb">组织概况</div>
+        <div class="party_left_btn mb flex spaceBetween alignCenter">
+            <div>市北高新局党委(1)<span>></span></div>
+            <div>局党总支(1)<span>></span></div>
+            <div>局党支部(9)<span>></span></div>
+        </div>
+        <div class="party_left_img flex justifyCenter alignCenter mb">
+            <img src="../img/party_left_img.png" alt="">
+        </div>
+        <div class="party_title">领导干部概况</div>
+        <div class="party_title_num mb ">
+            <span>183</span>
+            <span>27.7%</span>
+        </div>
+        <div class="party_charbox">
+            <div id="party_pie1"></div>
+        </div>
+    </div>
+    <div class="party_box_center">
+        <div class="party_title mb">党建动态</div>
+        <div class="party_center_img flex justifyCenter alignCenter mb">
+            <img src="../img/party_center_img.png" alt="">
+        </div>
+        <div class="party_charbox flex justifyCenter alignCenter">
+            <div id="party_pie2" style="width: 50%;"></div>
+            <div id="party_bar2"></div>
+        </div>
+    </div>
+    <div class="party_box_right">
+        <div class="party_title mb">党建概况</div>
+        <div class="party_right_top flex justifyCenter alignCenter column mb">
+            <div class="proportion flex spaceBetween alignCenter mb">
+                <div class="proportion_box">
+                    <div>党员比例</div>
+                    <div><span style="font-size: 50px;">57.6%</span></div>
+                </div>
+                <div>
+                    党员列表
+                </div>
+            </div>
+            <div class="peopre_num">
+                <div class="flex spaceBetween alignCenter">
+                    <div class="flex spaceBetween alignCenter peopre_num_div">当前党员申请总人数:<span>137</span></div>
+                    <div class="flex spaceBetween alignCenter peopre_num_div">列为积极分子总人数:<span>93</span></div>
+                </div>
+                <div class="flex spaceBetween alignCenter">
+                    <div class="flex spaceBetween alignCenter peopre_num_div">列为发展对象总人数:<span>83</span></div>
+                    <div class="flex spaceBetween alignCenter peopre_num_div">列为预备党员总人数:<span>23</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="party_charbox mb">
+            <div id="party_pie3"></div>
+        </div>
+        <div class="party_charbox">
+            <div id="party_bar1"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/module/partyBuildingManagement.js" type="text/javascript" charset="utf-8"></script>

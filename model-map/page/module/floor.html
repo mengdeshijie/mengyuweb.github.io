@@ -1,0 +1,48 @@
+<style>
+  .table_box .table>tbody>tr>td,
+  .table>tbody>tr>th,
+  .table>tfoot>tr>td,
+  .table>tfoot>tr>th,
+  .table>thead>tr>td,
+  .table>thead>tr>th {
+    border-top: none;
+    text-align: center;
+  }
+
+  .table_box .table>tbody>tr>td:nth-child(1) {
+    text-align: left;
+  }
+  .table_box .table>tbody>tr>td:nth-child(1) {
+    width: 280px;
+    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+  }
+  .table_box .table>tbody>tr {
+	display: flex;
+  }
+  .activel {
+    background: linear-gradient(to right,var(--zs) , var(--ns)) ;
+    color: #fff;
+  }
+</style>
+<div class="overview rightOverview flex column">
+  <div id="areaHtml"></div>
+  <div class="table_box flex column">
+    <div class="title flex spaceBetween alignCenter">
+      <div class="active" id="tung">A栋/5层</div>
+    </div>
+    <table class="table" center>
+      <thead>
+        <tr>
+          <th width="300" style="text-align: left; color: #9fa0a0;">企业列表</th>
+          <th width="70" style="color: #9fa0a0;" id="home">27家</th>
+        </tr>
+      </thead>
+      <tbody id="htmlUlLi"></tbody>
+    </table>
+  </div>
+</div>
+
+
+<script src="../js/module/floor.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,262 @@
+<style type="text/css">
+.leftOverview .general_info {
+      height: 105px;
+    }
+	.charts_box {
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	.charts_box .general_info_chart {
+		width: 25%;
+		height: 100px;
+		position: relative;
+	}
+
+	.charts_box .general_info_chart>div:first-child {
+		width: 100%;
+		height: 100%;
+	}
+
+	.charts_box .general_info_chart .pie_num {
+		position: absolute;
+        top:40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: #fff;
+	}
+	.charts_box .general_info_chart .pie_num span {
+		font-size: 12px;
+	}
+
+	.bottomOverview {
+		position: absolute;
+		left: 0;
+		top: calc(100vh - 230px);
+		width: 1150px;
+		height: 200px;
+		padding: 0px 10px 0 58px;
+		left: 0;
+		/* background-color: rgba(0, 0, 0, 0.8); */
+		color: #fff;
+		animation: myLeftView 1s ease forwards;
+	}
+
+	.bottomOverview .chart_box {
+		width: 33.33%;
+		height: 100%;
+	}
+	.bottomOverview .chart_box >div {
+		width: 100%;
+		height: 100%;
+	}
+	.table_box .table>tbody>tr {
+	
+	display: flex;
+  }
+	.table_box table {
+		 table-layout: fixed;
+	 }
+	  .table_box .table>thead>tr>th:nth-child(2){
+		  width: 250px;
+		  text-align: left;
+	  }
+	 
+	  .table_box .table>tbody>tr>td:nth-child(2) {
+		width: 260px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		margin-left: 5px;
+		text-align: left;
+	  }
+
+      .table .normal_num {
+        width: 28px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background: linear-gradient(var(--ns), var(--zs));
+        color: #fff;
+        border-radius: 3px;
+      }
+      
+      .popup_box .top .left{
+          margin-left: 10px;
+	  }
+	  .popup_box .center div {
+        height: 30px;
+		line-height: 30px;
+		font-size: 16px;
+	  }
+	  .popup_box .center .name {
+		font-size: 20px;
+		width: 335px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+	  }
+
+	  .popup_box .center .name span {
+		width: 320px;
+		display: inline-block;
+		overflow: hidden;/*内容超出后隐藏*/
+		text-overflow: ellipsis;/* 超出内容显示为省略号*/
+		white-space: nowrap;/*文本不进行换行*/
+	  }
+
+	  .popup_box .center .name img {
+		  width: 15px;
+		  height: 15px;
+		  margin-top: 5px;
+		  cursor: pointer;
+	  }
+
+      .popup_box .center .info {
+		margin-top: 10px;
+		margin-bottom: 10px;
+        width: 187px;
+		height: 48px;
+		cursor: pointer;
+	  }
+	  
+	  .popup_box .center .address .icon-weizhi {
+		  margin-left: 2px;
+	  }
+
+	  .popup_box .center .address .icon-weizhi {
+        font-size: 18px;
+	  }
+	  
+	  .popup_box .center .address .oaddress {
+		max-width: 270px;
+		vertical-align: top;
+		display: inline-block;
+		overflow: hidden;/*内容超出后隐藏*/
+		text-overflow: ellipsis;/* 超出内容显示为省略号*/
+		white-space: nowrap;/*文本不进行换行*/
+	  }
+
+	  .popup_box .chart_box {
+		  height: 150px !important; 
+		  width: 200px !important;
+	  }
+	  .table_box .title {
+		  width: 97%;
+	  }
+</style>
+
+<!-- 总览左 -->
+<div class="overview leftOverview flex column ">
+	<div class="general_info">
+		<div class="info_title">
+			<div>餐饮经营单位总数</div>
+		</div>
+		<div class="info_num">312</div><span>家</span>
+	</div>
+	<div class="general_info">
+		<div class="info_title">
+			<div>餐饮天鹰系统数</div>
+		</div>
+		<div class="info_num">21</div><span>家</span>
+	</div>
+	<div class="general_info">
+		<div class="info_title">
+			<div>大型餐饮企业数</div>
+		</div>
+		<div class="info_num">8</div><span>家</span>
+	</div>
+	
+	<!-- <div class="charts_box flex alignCenter spaceBetween">
+		<div class="general_info_chart flex alignCenter justifyCenter column">
+			<div id="foodSupervision_pie1"></div>
+			<div class="pie_num">84<span>%</span></div>
+			<div>整改率</div>
+		</div>
+		<div class="general_info_chart flex alignCenter justifyCenter column">
+			<div id="foodSupervision_pie2"></div>
+			<div class="pie_num">94<span>%</span></div>
+			<div>完成率</div>
+		</div>
+		<div class="general_info_chart flex alignCenter justifyCenter column">
+			<div id="foodSupervision_pie3"></div>
+			<div class="pie_num">6<span>%</span></div>
+			<div>下发率</div>
+		</div>
+		<div class="general_info_chart flex alignCenter justifyCenter column">
+			<div id="foodSupervision_pie4"></div>
+			<div class="pie_num">6<span>%</span></div>
+			<div>误报率</div>
+		</div>
+	</div> -->
+
+</div>
+
+<!-- 总览底 -->
+<div class="bottomOverview flex spaceBetween alignCenter">
+	<div class="chart_box">
+		<div id="foodSupervision_bar1"></div>
+	</div>
+	<div class="chart_box">
+		<div id="foodSupervision_bar2"></div>
+	</div>
+	<div class="chart_box">
+		<div id="foodSupervision_bar3"></div>
+	</div>
+</div>
+
+<!-- 总览右 -->
+<div class="overview rightOverview flex column foodSupervision">
+    <div id="areaHtml"></div>
+    <div class="table_box flex column">
+        <div class="title flex spaceBetween alignCenter">
+            <div class="active" id="tung">A栋</div>
+            <div id="home">27家</div>
+        </div>
+        <table class="table" center>
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>企业列表</th>
+                <th style="padding-right: 16px;">位置</th>
+              </tr>
+            </thead>
+            <tbody id="foodTbody"></tbody>
+          </table>
+    </div>
+</div>
+
+ <!-- 弹出框 -->
+ <div class="popup_box">
+	<div class="close"><img src="../img/modal_delete.png" alt=""></div>
+	<div class="center">
+		<div class="name"><span class="nameSpan"></span> <img src="../img/food_co.png" alt=""></div>
+		<div>负责人：<span class="link"></span></div>
+		<div>电话：<span class="tel"></span></div>
+		<div class="address">位置：<span class="oaddress text_overflow"></span><span class="iconfont icon-weizhi"></span></div>
+		<div class="info">
+		   <img src="../img/monitor.png" alt="">
+		</div>
+		<div>监管信息</div>
+	</div>
+	<div class="charts_box flex alignCenter spaceBetween" style="width: 200px;">
+		<div class="general_info_chart flex alignCenter justifyCenter column" style="width: 100px;">
+			<img src="../img/triangle.png" alt="" style="margin-bottom: 10px;">
+			<div class="pie_num police">2</div>
+			<div>告警数</div>
+		</div>
+		<div class="general_info_chart flex alignCenter justifyCenter column" style="width: 100px; height: 100px;">
+			<div id="foodSupervision_pie5"></div>
+			<div class="pie_num">100<span>%</span></div>
+			<div>整改率</div>
+		</div>
+	</div>
+	<div class="charts_box" style="height: 200px;">
+		<div id="foodSupervision_bar4" style="width: 90%; height: 100%;"></div>
+	</div>
+</div>
+
+
+<script src="../js/module/foodSupervision.js" type="text/javascript" charset="utf-8"></script>

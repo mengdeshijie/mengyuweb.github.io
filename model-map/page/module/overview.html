@@ -1,0 +1,229 @@
+<style type="text/css">
+	.overview {
+		height: 600px;
+	}
+
+	.right_center .right_center_box {
+		width: 163px;
+		margin-top: 10px;
+		margin-bottom: 14px;
+	}
+
+	.margin-lf {
+		margin-left: 7px;
+	}
+
+	.margin-rt {
+		margin-right: 10px;
+	}
+
+	.right_center_box .right_center_title {
+		border-left: 1px solid #9fa0a0;
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+
+	.right_center_title .center-title {
+		font-size: 14px;
+		color: #9fa0a0;
+	}
+
+	.right_center_title .center-num {
+		font-size: 36px;
+	}
+
+	.right_center_title .center-num span {
+		font-size: 14px;
+		margin-left: 5px;
+	}
+
+	.chart_box {
+		width: 100%;
+		color: #fff;
+		padding-right: 10px;
+	}
+
+	.chart_box .chart_box_info {
+		margin: 6px 0;
+	}
+
+	.chart_box_info .title {
+		font-size: 18px;
+		color: #9fa0a0;
+	}
+
+	.chart_box_info .num {
+		font-size: 34px;
+		height: 32px;
+	}
+
+	.chart_box_info .num span {
+		font-size: 18px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.chart_box_info .num .compare1 {
+		font-size: 14px;
+		background-color: #e8380d;
+		border-radius: 3px;
+	}
+	.chart_box_info .num .compare2 {
+		font-size: 14px;
+		background-color: #1ee016;
+		border-radius: 3px;
+	}
+
+	.chart_box .chart_box_bar {
+		width: 100%;
+		height: 140px;
+	}
+
+	.chart_box .chart_box_pie {
+		width: 100%;
+		height: 100px;
+	}
+
+	.bottomOverview {
+		position: absolute;
+		left: 0;
+		top: calc(100vh - 230px);
+		width: 1150px;
+		height: 190px;
+		padding-left: 58px;
+		left: 0;
+		/* background-color: rgba(0, 0, 0, 0.8); */
+		color: #fff;
+		animation: myLeftView 1s ease forwards;
+	}
+
+	.overRight .rightOverview {
+		top: 290px;
+	}
+
+	.regular_text {
+		font-size: 36px !important;
+		font-family: regular;
+	}
+</style>
+<!-- 总览左 -->
+<div class="overview leftOverview flex column ">
+	<div class="general_info">
+		<div class="info_title">
+			<div>园区经营单位总数</div>
+			<!-- <div class="date">2020.9.14</div> -->
+		</div>
+		<div class="info_num">4,704</div><span>家</span>
+	</div>
+	<div class="general_info">
+		<div class="info_title">
+			<div>园区企业总数</div>
+		</div>
+		<div class="info_num">4,306</div><span>家</span>
+	</div>
+	<div class="general_info">
+		<div class="info_title">
+			<div>园区个体户总数</div>
+		</div>
+		<div class="info_num">398</div><span>家</span>
+	</div>
+	<!-- <div class="chart_box">
+		<div id="left_pie4" style="width: 100%;height:100%;"></div>
+	</div> -->
+
+</div>
+
+<!-- 总览底 -->
+<div class="bottomOverview flex spaceBetween alignCenter">
+	<div class="chart_box">
+		<div class="chart_box_info">
+			<div class="title">园区历年营收总量</div>
+			<div class="num"><span class="regular_text">2,065</span><span>亿</span><span class="compare1">2019同比11.7%↑</span></div>
+		</div>
+		<div class="chart_box_bar">
+			<div id="chart_bar1" style="width: 100%;height:100%;"></div>
+		</div>
+	</div>
+	<div class="chart_box">
+		<div class="chart_box_info">
+			<div class="title">园区历年税收总量</div>
+			<div class="num"><span class="regular_text">90.1</span><span>亿</span><span class="compare2">2019同比5.54%↓</span></div>
+		</div>
+		<div class="chart_box_bar">
+			<div id="chart_bar2" style="width: 100%;height:100%;"></div>
+		</div>
+	</div>
+	<div class="chart_box" style="width: 100%;padding-top: 5px;">
+		<div id="left_bar" style="width: 100%;height:200px;"></div>
+	</div>
+</div>
+<!-- 总览右 -->
+<div class="overview rightOverview flex column">
+	<div id="areaHtml"></div>
+	<div class="overRight" id="floorHtml">
+		<div class="right_center flex spaceBetween alignCenter wrap">
+			<div class="right_center_box flex justifyCenter alignCenter">
+				<img src="../img/home-left1.png" alt="">
+				<div class="right_center_title">
+					<div class="center-title">跨国公司总部</div>
+					<div class="center-num"><span class="regular_text">21</span><span>家</span></div>
+				</div>
+			</div>
+			<div class="right_center_box flex justifyCenter alignCenter" style="margin-right: -1px">
+				<img src="../img/home-top1.png" alt="">
+				<div class="right_center_title">
+					<div class="center-title">央企、民营总部</div>
+					<div class="center-num"><span class="regular_text">55</span><span>家</span></div>
+				</div>
+			</div>
+			<div class="right_center_box flex justifyCenter alignCenter margin-lf"  style="margin-left: -10px">
+				<img src="../img/home-left6.png" alt="">
+				<div class="right_center_title">
+					<div class="center-title">500强企业</div>
+					<div class="center-num"><span class="regular_text">17</span><span>家</span></div>
+				</div>
+			</div>
+			<div class="right_center_box flex justifyCenter alignCenter margin-rt" style="margin-right: 21px">
+				<img src="../img/home-left7.png" alt="">
+				<div class="right_center_title">
+					<div class="center-title">上市公司</div>
+					<div class="center-num"><span class="regular_text">19</span><span>家</span></div>
+				</div>
+			</div>
+			<div class="right_center_box flex justifyCenter alignCenter" style="margin-left: -7px">
+				<img src="../img/home-top4.png" alt="">
+				<div class="right_center_title">
+					<div class="center-title">质量奖企业</div>
+					<div class="center-num"><span class="regular_text">5</span><span>家</span></div>
+				</div>
+			</div>
+			<div class="right_center_box flex justifyCenter alignCenter" style="margin-right: 14px">
+				<img src="../img/home-top2.png" alt="" style="margin-left: 10px">
+				<div class="right_center_title">
+					<div class="center-title">纳税信用A级</div>
+					<div class="center-num"><span class="regular_text">10</span><span>家</span></div>
+				</div>
+			</div>
+			<!-- <div class="right_center_box flex justifyCenter alignCenter" style="margin-left: 3px">
+			<img src="../img/home-left4.png" alt="">
+			<div class="right_center_title">
+				<div class="center-title">食品经营许可</div>
+				<div class="center-num">3<span>家</span></div>
+			</div>
+		</div>
+		<div class="right_center_box flex justifyCenter alignCenter">
+			<img src="../img/home-left5.png" alt="" style="margin-left: 6px">
+			<div class="right_center_title">
+				<div class="center-title">药品经营许可</div>
+				<div class="center-num">3<span>家</span></div>
+			</div>
+		</div> -->
+		</div>
+
+	<div class="chart_box flex" style="height:200px;">
+		<div id="drawPieArea" style="width: 50%;height:100%"></div>
+		<div id="left_pie1" style="width: 50%;height:100%"></div>
+	</div>
+</div>
+
+<script src="../js/module/overview.js" type="text/javascript" charset="utf-8"></script>

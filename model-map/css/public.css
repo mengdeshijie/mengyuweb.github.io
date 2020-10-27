@@ -1,0 +1,578 @@
+/*公共样式*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    color: #ffffff;
+    font-family: "微软雅黑";
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    /* background-image: url(../img/BG.jpg); */
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
+}
+
+:root {
+    --zs: #6045d5;
+    --ns: #87eaff;
+    --tco: #9fa0a0;
+}
+
+@font-face {
+    font-family: 'light';
+    src: url(BebasNeue_Light.ttf);
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url(BebasNeue_Regular.ttf);
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url(BebasNeue_Bold.ttf);
+}
+
+
+/* font-family: light; */
+
+.wrapper {
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+}
+
+a,
+.table {
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    content: "";
+    height: 0px;
+    display: block;
+    clear: both;
+}
+
+.hide,
+.hideData {
+    display: none;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.justifyCenter {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.spaceBetween {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.alignCenter {
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flexEnd {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.warp {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+/* 区域选择 */
+
+.constituency {
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.constituency_title {
+    font-size: 16px;
+    color: #9fa0a0;
+}
+
+.constituency_title div:last-child {
+    font-size: 12px;
+}
+
+.constituency_select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.constituency_select div {
+    cursor: pointer;
+    width: 156px;
+    height: 34px;
+    line-height: 34px;
+    margin-bottom: 8px;
+    padding-left: 30px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff;
+    background-image: url(../img/overview_btn.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+}
+
+.constituency_select .active {
+    background-image: url(../img/overview_btn1.png);
+    color: #000;
+    border-left: 2px solid #fff;
+    border-radius: 3px;
+}
+
+.constituency_input {
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    padding-bottom: 20px;
+    border-top: 1px solid #aaa;
+}
+
+.constituency_input input:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.constituency_input img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 24px;
+    top: 53px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+
+/* 下拉框 */
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 313px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.bootstrap-select,
+.dropdown-menu {
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.bs-actionsbox,
+.bs-searchbox {
+    padding: 0;
+}
+
+.open .bootstrap-select>.dropdown-toggle,
+.bs-caret {
+    display: none;
+}
+
+.constituency_input input,
+.bs3 .dropdown-toggle,
+.bs3 .dropdown-toggle:hover,
+.bs3 .dropdown-toggle:active {
+    width: 100%;
+    height: 42px;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: 0px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 40px;
+    padding-left: 10px;
+    padding-right: 40px;
+    text-shadow: none;
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+.bs3 input.form-control,
+.bs3 .inner.open {
+    width: 313px;
+}
+
+.bs3 .inner.open {
+    min-width: calc(100% - 40px) !important;
+}
+
+.bs3 .dropdown-menu {
+    overflow: inherit !important;
+    margin-bottom: 50px;
+    min-width: calc(100% - 40px) !important;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bootstrap-select .dropdown-menu li {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #c2c2c2;
+}
+
+.bs3 .dropdown-menu>li>a {
+    color: #fff;
+}
+
+.bs3.bootstrap-select .dropdown-toggle .filter-option {
+    height: auto;
+}
+
+.bs3 .dropdown-menu>li>a:hover,
+.bs3 .dropdown-menu>.active>a,
+.bootstrap-select .no-results {
+    background: linear-gradient(var(--ns), var(--zs));
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.alerts {
+    min-width: 380px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+/* 左边 */
+
+body {
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+.overview {
+    height: calc(100vh - 205px);
+}
+
+.leftOverview {
+    position: absolute;
+    top: 205px;
+    bottom: 400px;
+    width: 400px;
+    height: 600px;
+    padding: 0px 10px 0 58px;
+    left: 0;
+    color: #fff;
+    animation: myLeftView 1s ease forwards;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+@keyframes myLeftView {
+    0% {
+        left: -398px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+.leftOverview .general_info {
+    margin-top: 10px;
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.general_info .info_title div {
+    font-size: 22px;
+    color: #9fa0a0;
+    height: 20px;
+}
+
+.general_info .info_title .date {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.general_info .info_num {
+    font-size: 60px;
+    color: var(--ns);
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(var(--ns)), to(var(--zs)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    font-family: bold;
+    height: 30px;
+}
+
+.general_info span {
+    font-size: 22px;
+    margin-left: 10px;
+    color: #fff !important;
+}
+
+
+/* 右边 */
+
+.leftOverview .chart_box {
+    width: 100%;
+    height: 210px;
+}
+
+.rightOverview {
+    position: absolute;
+    top: 180px;
+    /* top: 205px; */
+    bottom: 0;
+    right: 0;
+    width: 364px;
+    padding: 0 10px;
+    animation: myRightViews 1s ease forwards;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 10;
+}
+
+@keyframes myRightViews {
+    0% {
+        right: -398px;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+.right_center {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.table_box {
+    width: 102%;
+}
+
+.table_box .title {
+    width: 120px;
+    font-size: 20px;
+    color: #9fa0a0;
+    cursor: pointer;
+}
+
+.table_box .title .active {
+    color: #fff;
+}
+
+.table_box .table {
+    color: #9fa0a0;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.table_box .table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    border-top: none;
+    text-align: center;
+    padding: 6px;
+    width: auto;
+}
+
+
+/* .table>thead>tr>td, .table>thead>tr>th {
+	text-align: center;
+  } */
+
+.table_box .table>thead {
+    display: table;
+    width: 100%;
+}
+
+.table_box .table>tbody {
+    max-height: 440px;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.table_box .table>tbody>tr {
+    width: 348px;
+    display: table;
+}
+
+
+/* table tbody::-webkit-scrollbar {
+    display: none;
+} */
+
+.table_box .table>tbody>tr:hover {
+    background: linear-gradient(to right, var(--zs), var(--ns));
+    color: #fff;
+}
+
+.table_box .table>tbody>.activel {
+    background: linear-gradient(to right, var(--zs), var(--ns));
+    color: #fff;
+}
+
+.table_box .table>tbody>tr>td>.activel {
+    color: #fff;
+}
+
+.table_box .table>thead>tr>th {
+    border-bottom: none;
+}
+
+.table_box .table>tbody>tr:nth-of-type(odd) {
+    background-color: #000;
+}
+
+.table_box .table>tbody>tr:nth-of-type(even) {
+    background-color: #3e3a39;
+}
+
+table .icon-gouxuankuangxuanzhong {
+    font-size: 18px;
+    color: #1ee016;
+}
+
+table .icon-weizhi {
+    font-size: 18px;
+    color: #9fa0a0;
+    vertical-align: middle;
+}
+
+table .icon-jurassic_warning {
+    font-size: 18px;
+    color: red;
+}
+
+.popup_box {
+    width: 400px;
+    height: calc(100vh);
+    position: absolute;
+    right: 364px;
+    background: linear-gradient(rgba(99, 73, 218, 0.8), rgba(135, 234, 255, 0.8));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 50px;
+    transform: translate(400px, 0px);
+    opacity: 0;
+}
+
+.popup_box .close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    color: #fff;
+    opacity: 1;
+}
+
+.popup_box .close img {
+    width: 20px;
+    height: 20px;
+}
+
+.popup_box .close .icon-youjiantou {
+    font-size: 14px;
+}
+
+.popup_box_active1 {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s;
+}
+
+.popup_box_active2 {
+    transform: translate(400px, 0px);
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.icon-yanjing {
+    font-size: 32px !important;
+}

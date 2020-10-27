@@ -1,0 +1,236 @@
+<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+<style type="text/css">
+    .law_box {
+        display: flex;
+        position: absolute;
+        top: 205px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 205px);
+        padding: 0px 10px 0 58px;
+        background-color: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .law_box .law_box_left {
+        flex: 0 0 14em;
+        padding-right: 30px;
+        border-right: 1px solid #3c4381;
+    }
+
+    .law_box .law_box_left .left_nav {
+        width: 226px;
+        border: 1px solid #3c4381;
+        background-color: #051331;
+        border-radius: 10px;
+    }
+
+    .law_box_left .left_nav div {
+        width: 100%;
+        line-height: 26px;
+        text-align: center;
+        padding: 13px 30px;
+        border-top: 1px solid #3c4381;
+        cursor: pointer;
+    }
+
+    .left_nav_active,
+    .law_box_left .left_nav div:hover {
+        background: linear-gradient(to right, var(--zs), var(--ns));
+    }
+
+    .law_box_left .left_nav div:nth-child(1) {
+        border-top: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .law_box_left .left_nav div:last-of-type {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .law_box .law_box_right {
+        flex: 1;
+        padding-left: 30px;
+    }
+
+    .law_box .law_box_right .right_top {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #3c4381;
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: #051331;
+    }
+
+    .law_box .law_box_right .right_bottom {
+        margin-top: 10px;
+        width: 100%;
+        height: 600px;
+        border: 1px solid #3c4381;
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: #051331;
+    }
+
+    .right_bottom .right_bottom_title,
+    .right_top .right_top_title {
+        margin-bottom: 12px;
+    }
+
+    .form-control {
+        background-color: #0f2b63;
+        border: 1px solid #03406f;
+        color: #fff;
+    }
+
+    .form-group {
+        margin-right: 20px;
+    }
+
+    .right_bottom table thead tr {
+        background-color: #163060;
+    }
+
+    .right_bottom .table-bordered>tbody>tr>td,
+    .right_bottom .table-bordered>tbody>tr>th,
+    .right_bottom .table-bordered>tfoot>tr>td,
+    .right_bottom .table-bordered>tfoot>tr>th,
+    .right_bottom .table-bordered>thead>tr>td,
+    .right_bottom .table-bordered>thead>tr>th {
+        border: 1px solid #263250;
+        text-align: center;
+    }
+
+    .right_bottom .table-bordered>tbody>tr>td:last-child {
+        cursor: pointer;
+    }
+
+    .right_bottom .table>thead:first-child>tr:first-child>th {
+        border-top: 1px solid #263250 !important;
+    }
+
+    .right_bottom .table>thead {
+        width: 100%;
+        display: table;
+    }
+
+    .right_bottom .table>tbody {
+        max-height: 480px;
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100.5%;
+    }
+
+    .right_bottom .table>tbody>tr {
+        width: 100%;
+        display: table;
+    }
+
+    .right_bottom .table-bordered {
+        border: none;
+    }
+    .right_bottom .table>thead>tr>th:nth-child(1),
+    .right_bottom .table>tbody>tr>td:nth-child(1) {
+        width: 50%;
+    }
+
+    .right_bottom .table>thead>tr>th:nth-child(2),
+    .right_bottom .table>tbody>tr>td:nth-child(2),
+    .right_bottom .table>thead>tr>th:nth-child(3),
+    .right_bottom .table>tbody>tr>td:nth-child(3) {
+        width: 20%;
+    }
+
+    .datetimepicker td,
+    .datetimepicker th {
+        color: black;
+    }
+
+    .form-control[readonly],
+    .input-group-addon {
+        background-color: #0f2b63;
+    }
+
+    .input-group-addon {
+        border-color: #0f2b63;
+        color: #fff;
+    }
+
+    .formClass {
+        overflow: hidden;
+    }
+
+    .formClass .formButton {
+        float: right;
+    }
+
+    .selectClsss {
+        min-width: 200px;
+    }
+</style>
+
+<div class="law_box">
+    <div class="law_box_left">
+        <div id="leftNavList" class="left_nav flex alignCenter column spaceBetween">
+            <div class="left_nav_active">工商行政管理</div>
+            <div>食品、药品、化妆品、医疗器械</div>
+            <div>质量技术监督</div>
+            <div>其它行政法律法规</div>
+        </div>
+    </div>
+    <div class="law_box_right">
+        <div class="right_top">
+            <div class="right_top_title">查询条件</div>
+            <form id="formId" class="form-inline formClass">
+                <div class="form-group">
+                    标题名称：<input type="text" class="form-control" name="title" placeholder="请输入">
+                </div>
+                <label>发布或实施日期：</label>
+                <div class="input-group date form_datetime">
+                    <input class="form-control beginTime" name="beginTime" required readonly />
+                    <span class="input-group-addon input-group-append">
+                        <span class="glyphicon glyphicon-calendar input-group-text justify"></span>
+                    </span>
+                </div>
+                至
+                <div class="input-group date form_datetime form-group">
+                    <input class="form-control endTime" name="endTime" required readonly />
+                    <span class="input-group-addon input-group-append">
+                        <span class="glyphicon glyphicon-calendar input-group-text justify"></span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    选择类型：
+                    <select id="selectId" class="form-control selectClsss" name="secClass"></select>
+                </div>
+                <div class="formButton">
+                    <span id="resetId" class="btn btn-primary">重置</span>
+                    <span id="queryId" class="btn btn-primary">查询</span>
+                </div>
+            </form>
+        </div>
+
+        <div class="right_bottom">
+            <div class="right_bottom_title">数据列表</div>
+            <table id="tableId" class="table table-bordered" center>
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>发布或实施日期</th>
+                        <th>类型</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="lawTbody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- <script src="../js/biz/bootstrap-datetimepicker.min.js"></script> -->
+<script src="../js/module/law.js" type="text/javascript" charset="utf-8"></script>
