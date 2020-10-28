@@ -2,7 +2,6 @@ publicObj.foodSupervision = {
     init() {
         this.fnAjax();
         this.fnPopup();
-        // this.fnIconfont();
         this.fnClick();
     },
     fnAjax() {
@@ -25,7 +24,11 @@ publicObj.foodSupervision = {
         });
     },
     fnPopup() {
-        var a = false, b = false, aIndex = null, bIndex = null, cIndex = null
+        var a = false,
+            b = false,
+            aIndex = null,
+            bIndex = null,
+            cIndex = null
         $(".table_box .table>tbody>tr").on("mouseover", function () {
             aIndex = $(this).index();
             a = true
@@ -42,13 +45,15 @@ publicObj.foodSupervision = {
             publicObj.fnAjaxFloor("system/cesbasenodefood/" + selectId, (d) => {
                 bIndex = oIndex;
                 b = true;
-                let { data } = d;
+                let {
+                    data
+                } = d;
                 $(".popup_box .nameSpan").text(data.compName);
                 $(".popup_box .link").text(data.link);
                 $(".popup_box .tel").text(data.tel);
                 $(".popup_box .oaddress").text(data.address);
-                $(".popup_box .police").text(Math.ceil(Math.random()*3));
-                moveTo("大型餐饮定位-"+data.mark);
+                $(".popup_box .police").text(Math.ceil(Math.random() * 3));
+                moveTo("大型餐饮定位-" + data.mark);
                 if (bIndex != cIndex) {
                     if (cIndex == null) {
                         $(".popup_box").removeClass("popup_box_active2").addClass("popup_box_active1");
@@ -78,25 +83,42 @@ publicObj.foodSupervision = {
     },
     fnEquipmentTr(selectId) {
         if (selectId == "all") {
-            let data = publicObj.selectAll, tr = "";
+            let data = publicObj.selectAll,
+                tr = "";
             for (let i = 0; i < data.length; i++) {
                 tr += `<tr data-id="${data[i].id}"><td><div class="normal_num">${i + 1}</div></td><td>${data[i].compName}</td><td><span class="iconfont icon-weizhi"></span></td></tr>`;
             }
             $("#foodTbody").html(tr);
-            $("#home").text(data.length+"家");
+            $("#home").text(data.length + "家");
         } else {
             publicObj.fnAjaxFloor("system/cesbasenodefood/" + selectId, (d) => {
-                let { data } = d;
-                let tr = `<tr data-id="${data.id}"><td><div class="normal_num">1</div></td><td>${data.compName}</td><td><span class="iconfont icon-weizhi"></span></td></tr>`;
+                let arrs = [],
+                    tr = "";
+                if (typeof d.data === "object" && d.data.id) {
+                    arrs.push(d.data);
+                } else {
+                    arrs = d.rows;
+                }
+                for (let i = 0; i < arrs.length; i++) {
+                    tr += `<tr data-id="${arrs[i].id}"><td><div class="normal_num">${i+1}</div></td><td>${arrs[i].compName}</td><td><span class="iconfont icon-weizhi"></span></td></tr>`
+                }
                 $("#foodTbody").html(tr);
-                $("#home").text("1家");
+                $("#home").text(arrs.length + "家");
             });
         }
     },
     fnClick() {
+        let self = this;
         $(".centerHtml").off("changed.bs.select").on('changed.bs.select', '#mySelect', () => {
             let selectId = $('#mySelect').selectpicker('val');
             this.fnEquipmentTr(selectId);
+        });
+        $("#foodLeftTop>div .info_num").click(function () {
+            let id = $(this).data("id");
+            if (id != "all") {
+                id = "list?" + id;
+            }
+            self.fnEquipmentTr(id);
         });
     }
 }
@@ -114,5 +136,4 @@ function fnIconfont(a, b, aIndex, bIndex) {
     } else {
         $(".icon-weizhi").eq(aIndex).removeClass("activel");
     }
-
 }

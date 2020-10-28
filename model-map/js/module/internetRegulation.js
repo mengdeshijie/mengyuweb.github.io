@@ -5,13 +5,19 @@ publicObj.internetRegulation = {
         $("#tung").text("企业情况");
     },
     fnAjax() {
+        let self = this;
         publicObj.fnAjaxFloor("system/monitor/listwt", d => {
-            let data = d.rows,ohtml="";
+            let data = d.rows,
+                ohtml = "";
             if (data.length) {
                 for (let i = 0; i < data.length; i++) {
-                    ohtml += `<div class="flex spaceBetween alignCenter"><div><span></span>${data[i].checkResult}</div><div class="up">${data[i].orderno}</div></div>`;
+                    ohtml += `<div class="flex spaceBetween alignCenter"><div class="checkResult"><span></span>${data[i].checkResult}</div><div class="up">${data[i].orderno}</div></div>`;
                 }
-                $(".bottonLeftList").html(ohtml); 
+                $("#internetLeftList").html(ohtml);
+                $("#internetLeftList>div .checkResult").click(function () {
+                    let oText = $(this).text();
+                    self.fnSelect("checkResult", oText);
+                });
             }
         });
         $.ajax({
@@ -25,10 +31,12 @@ publicObj.internetRegulation = {
             }
         });
     },
-    fnSelect(selectId) {
+    fnSelect(selectId, oText) {
         let url = "";
         if (selectId == "1") {
             url = "isAbnormal=是";
+        } else if (selectId == "checkResult") {
+            url = "checkResult=" + oText;
         } else if (selectId != "all") {
             url = "monitorObject=" + selectId;
         }
@@ -53,10 +61,10 @@ publicObj.internetRegulation = {
             let id = $(this).data("id");
             publicObj.fnPdf("InternetRegulation/" + id);
         });
-        $(".internetRegulation .total").click( ()=> {
+        $(".internetRegulation .total").click(() => {
             this.fnSelect("all");
         });
-        $(".internetRegulation .abnormal").click( ()=> {
+        $(".internetRegulation .abnormal").click(() => {
             this.fnSelect(1);
         });
     }
