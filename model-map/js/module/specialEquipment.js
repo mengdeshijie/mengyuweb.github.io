@@ -11,6 +11,7 @@ publicObj.specialEquipment = {
         this.fnRuning();
         this.fnTable();
         this.fnPopup();
+        fnHtml("iframeHtml");
         this.fnClick();
     },
     fnAjax() {

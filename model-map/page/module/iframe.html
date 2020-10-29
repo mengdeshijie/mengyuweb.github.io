@@ -1,0 +1,57 @@
+<style>
+    .iframeBox {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        z-index: 99;
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    .iframeKeys {
+        animation: iframeKey 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    .iframeBox .oIframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .iframeBox .removeIcon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        color: #fff;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    @keyframes iframeKey {
+        0% {
+            transform: translateX(100vw);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0vw);
+            opacity: 1;
+        }
+    }
+</style>
+<div id="iframeBox" class="iframeBox">
+    <iframe class="oIframe"
+        src="https://chaozhou.kitchenkankan.com:90/supervise_api/brightKitchen/realTimeMonitor?userInfo=Y2xldXlrcnZEQ1M4d3JpWkFWeW8xQT09"
+        frameborder="0"></iframe>
+    <span id="removeIcon" class="glyphicon glyphicon-remove removeIcon" aria-hidden="true"></span>
+</div>
+<script>
+    $("#supervise").click(function () {
+        $("#iframeBox").addClass("iframeKeys");
+    });
+    $("#removeIcon").click(function () {
+        $("#iframeBox").removeClass("iframeKeys");
+    });
+</script>

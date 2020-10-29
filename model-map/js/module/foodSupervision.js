@@ -2,6 +2,7 @@ publicObj.foodSupervision = {
     init() {
         this.fnAjax();
         this.fnPopup();
+        fnHtml("iframeHtml");
         this.fnClick();
     },
     fnAjax() {
